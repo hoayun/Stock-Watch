@@ -1,4 +1,4 @@
-var sym = require("/js/query.js");
+//var sym = require("/js/query.js");
 
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
@@ -6,7 +6,7 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
   });
-for(i=0;i>sym.length;i++){
+/*for(i=0;i>sym.length;i++){
   var query = "https://cloud.iexapis.com/beta/stock/"+i +"/quote?token=pk_193c5e7c831c41a2a9fdc3cba2372560"
   $.ajax({
     url: query,
@@ -15,5 +15,5 @@ for(i=0;i>sym.length;i++){
 console.log(data);
   })
 }
-
+*/
 });
