@@ -47,7 +47,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("/signup", function(req, res) {
     res.render("signup");
   });
 };
