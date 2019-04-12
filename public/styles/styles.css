@@ -2,10 +2,16 @@
 	line-height: 2.5;
 }
 /* STYLE CSS FOR MATERIALIZE */
+#logoimg{
+	height: 100%;
+	background: rgb(46, 46, 47);
+	/* width: 258px; */
+}
 .logo {
 	max-height: 50px;
 	margin-top: 9px;
 }
+
 nav ul a,
 nav .brand-logo {
 	color: #444;
@@ -56,4 +62,12 @@ p {
 
 footer.page-footer {
 	margin: 0;
+}
+
+#sign {
+	border-radius: 25px;
+	border: 1px solid black;
+	margin-top: 20px;
+	box-shadow: 5px 10px 18px #888888;
+	padding: 15px;
 }
