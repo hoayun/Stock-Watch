@@ -61,8 +61,9 @@ week52High: 19.11
 week52Low: 8.35
 ytdChange: 0.250363 */
 // Then we need a way to grab symbols put in through a form and push them into the user's favstock symbol column
-    }
+    });
   }
+}
   ready();
 });
 
