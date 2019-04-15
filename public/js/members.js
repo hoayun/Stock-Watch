@@ -37,6 +37,12 @@ $(document).ready(function() {
     $.get("/api/user_data").then(function (data) {
       var sym = [];
       sym.push(data.favstock1, data.favstock2, data.favstock3, data.favstock4, data.favstock5, data.favstock6);
+      if(data.favstock1===null){
+        console.log("there is no favstock");
+      }
+     else{ $(".cardstart").empty();
+
+
     //  sym is gonna be an array produced from the favstock symbols in a specific users table********************* TO DO
   
     for (i = 0; i < sym.length; i++) {
@@ -46,11 +52,32 @@ $(document).ready(function() {
         url: query,
         method: "GET",
       }).then(function (data) {
+        
+                 // Weather data                
+ 
+                 var companyName = $("<span>").text(data.companyName).addClass("card-title");
+                 var symbol = $("<p>").text(data.symbol);
+                 var high = $("<p>").text("High: " + data.high);
+                 var low = $("<p>").text("Low: " + data.low);
+                 // Making a card for weather
+                 var weatherdiv = $("<div class='col'>")
+                 var wcardDiv = $("<div>").addClass("card blue-grey darken-1");
+                 var wInfo = $("<div>").addClass("card-content white-text");
+                 // Putting weather data on weather card
+                     weatherdiv.append(wcardDiv);
+                    
+                     wInfo.append(companyName);
+                     wInfo.append(symbol);
+                     wInfo.append(high);
+                     wInfo.append(low);
+                     wcardDiv.append(wInfo);
+                         $(".cardstart").append(weatherdiv);
         console.log(data);
         console.log(data.symbol);
         console.log(data.high);
         console.log(data.low)
         console.log(data.companyName);
+      
         // We need to grab this data using jquery and display to the user on their page************************* TO DO *below is a list of possible data
 
         /*calculationPrice: "close"
@@ -93,6 +120,7 @@ $(document).ready(function() {
         // Then we need a way to grab symbols put in through a form and push them into the user's favstock symbol column
       });
     }
+  }
   })
   }
   ready();
