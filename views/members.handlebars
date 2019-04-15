@@ -23,18 +23,6 @@
       <div class="col-md-10">
         <h2>Welcome <span class="member-name"></span></h2>
 <form class="create-form ">
-
-  <div class="form-group text-center">
-    <label for="ca">Table #</label>
-    <input type="text" id="stock" name="stock1">
-  </div>
-
-
-  <button type="submit">Add a new table</button>
-</form>
-
-        
-        
       </div>
       <div class="row">
         <h4>Your Stocks</h4>
@@ -52,7 +40,7 @@
           </div>
           <form autocomplete="off" action="">
             <div class="autocomplete" style="width:800px;">
-              <input id="myInput" class="input1" type="text" name="sym" placeholder="Stock Symbol">
+              <input id="myInput1" class="input1" type="text" name="sym" placeholder="Stock Symbol">
             </div>
             <input type="submit">
           </form>
@@ -69,7 +57,7 @@
           </div>
           <form autocomplete="off" action="">
             <div class="autocomplete" style="width:300px;">
-              <input id="myInput" class="input2" type="text" name="sym" placeholder="Stock Symbol">
+              <input id="myInput2" class="input2" type="text" name="sym" placeholder="Stock Symbol">
             </div>
             <input type="submit">
           </form>
@@ -87,7 +75,7 @@
           </div>
           <form autocomplete="off" action="">
             <div class="autocomplete" style="width:800px;">
-              <input id="myInput" class="input3" type="text" name="sym" placeholder="Stock Symbol">
+              <input id="myInput3" class="input3" type="text" name="sym" placeholder="Stock Symbol">
             </div>
             <input type="submit">
           </form>
@@ -104,7 +92,7 @@
           </div>
           <form autocomplete="off" action="">
             <div class="autocomplete" style="width:300px;">
-              <input id="myInput" class="input4" type="text" name="sym" placeholder="Stock Symbol">
+              <input id="myInput4" class="input4" type="text" name="sym" placeholder="Stock Symbol">
             </div>
             <input type="submit">
           </form>
@@ -122,8 +110,6 @@
         <p class="grey-text text-lighten-4">We are a small team of three trying our best to make sure you get the most
           out of buying and sellings stocks. This site was made with love and we would appreciate any and all feedback!
         </p>
-
-
       </div>
     </div>
   </div>
@@ -3674,5 +3660,9 @@
     'ZYXI',
     'ZNGA',
     ]
-  autocomplete(document.getElementById("myInput"), sym);
+  autocomplete(document.getElementById("myInput1"), sym);
+  autocomplete(document.getElementById("myInput2"), sym);
+  autocomplete(document.getElementById("myInput3"), sym);
+  autocomplete(document.getElementById("myInput4"), sym);
+
 </script>
