@@ -27,6 +27,13 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
   function ready() {
+    var query1 = "https://newsapi.org/v2/everything?q=stocks&from=2019-04-15&sortBy=popularity&apiKey=9d5561e285274379bd8c36f1241a89c7"
+      $.ajax({
+        url: query1,
+        method: "GET",
+      }).then(function (data) {
+        console.log(data);
+      })
     $.get("/api/user_data").then(function (data) {
       var sym = [];
       sym.push(data.favstock1, data.favstock2, data.favstock3, data.favstock4, data.favstock5, data.favstock6);
