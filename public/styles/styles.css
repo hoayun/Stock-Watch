@@ -5,6 +5,10 @@
 body {
 	background: white;
 }
+.text{
+	color: rgba(24, 170, 82)
+}
+
 .logo {
     max-width: 323px;
     max-height: 121px;
@@ -27,7 +31,7 @@ p {
 }
 
 .sidenav-trigger {
-	color: #26a69a;
+	color: rgba(24, 170, 82);
 }
 
 .parallax-container {
