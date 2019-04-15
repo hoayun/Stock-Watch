@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  $(".create-form").on("submit", function(event) {
+  $("#input1").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     $.get("/api/user_data").then(function(data) {
 
       var newStock = {
-        favstock1: $("#stock").val().trim(),
+        favstock1: $("#myInput").val(),
         email: data.email
       };
 
@@ -41,6 +41,7 @@ $(document).ready(function() {
   
     for (i = 0; i < sym.length; i++) {
       var query = "https://cloud.iexapis.com/beta/stock/" + sym[i] + "/quote?token=pk_193c5e7c831c41a2a9fdc3cba2372560"
+      console.log(query);
       $.ajax({
         url: query,
         method: "GET",
