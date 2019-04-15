@@ -1,11 +1,11 @@
 $(document).ready(function() {
-  $(".create-form").on("submit", function(event) {
+  $("#input1").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     $.get("/api/user_data").then(function(data) {
 
       var newStock = {
-        favstock1: $("#stock").val().trim(),
+        favstock1: $("#myInput").val(),
         email: data.email
       };
 
@@ -27,6 +27,13 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
   function ready() {
+    var query1 = "https://newsapi.org/v2/everything?q=stocks&from=2019-04-15&sortBy=popularity&apiKey=9d5561e285274379bd8c36f1241a89c7"
+      $.ajax({
+        url: query1,
+        method: "GET",
+      }).then(function (data) {
+        console.log(data);
+      })
     $.get("/api/user_data").then(function (data) {
       var sym = [];
       sym.push(data.favstock1, data.favstock2, data.favstock3, data.favstock4, data.favstock5, data.favstock6);
@@ -34,6 +41,7 @@ $(document).ready(function() {
   
     for (i = 0; i < sym.length; i++) {
       var query = "https://cloud.iexapis.com/beta/stock/" + sym[i] + "/quote?token=pk_193c5e7c831c41a2a9fdc3cba2372560"
+      console.log(query);
       $.ajax({
         url: query,
         method: "GET",
