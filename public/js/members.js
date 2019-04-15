@@ -6,8 +6,8 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
   });
-for(i=0;i>sym.length;i++){
-  var query = "https://cloud.iexapis.com/beta/stock/"+i +"/quote?token=pk_193c5e7c831c41a2a9fdc3cba2372560"
+for(i=0;i<sym.length;i++){
+  var query = "https://cloud.iexapis.com/beta/stock/"+ i +"/quote?token=pk_193c5e7c831c41a2a9fdc3cba2372560"
   $.ajax({
     url: query,
     method: "GET",

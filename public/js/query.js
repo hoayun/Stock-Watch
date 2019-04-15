@@ -3434,4 +3434,4 @@ var sym = [YI,
     ZYXI,
     ZNGA,
     ]
-    
+    module.exports = sym;
