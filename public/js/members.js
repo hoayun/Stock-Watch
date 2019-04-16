@@ -19,7 +19,7 @@ $(document).ready(function () {
         function () {
           console.log("created new stock");
           // Reload the page to get the updated list
-          // location.reload();
+          location.reload();
         });
     });
   }); 
@@ -124,7 +124,6 @@ $(document).ready(function () {
      wcardDiv.append(wInfo);
      
           $("#articles").append(articleDiv);
-        console.log(data);
         }
       })
  
@@ -164,7 +163,7 @@ $(document).ready(function () {
             var linkONE = $("<a href='#'>").text("Go to Stock Page");
             var auto = $("<form autocomplete='off' action=''>")
             var autoline2 = $("<div style='width:800px'>").addClass("autocomplete")
-            var inputauto = $("<input id='myInput1' type='text' name='sym' placeholder='Symbol Name'>").addClass("input1")
+            var inputauto = $("<input id='myInput' type='text' name='sym' placeholder='Symbol Name'>").addClass("input1")
             var submit = $("<input id='input1' type='submit'>");
 
             weatherdiv.append(wcardDiv);
