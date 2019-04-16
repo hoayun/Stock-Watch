@@ -1,4 +1,5 @@
 var db = require("../models");
+// var keys = require("../config/keys");
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 
@@ -7,6 +8,8 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
+    console.log("this is the keys" + keys.secret)
+  
     // If the user already has an account send them to the members page
     // if (req.user) {
     //   res.redirect("/members");

@@ -1,4 +1,5 @@
-// require('dotenv').config()
+ 
+
 $(document).ready(function () {
 
   $("#input1").on("click", function (event) {
@@ -41,7 +42,7 @@ $(document).ready(function () {
         function () {
           console.log("created new stock");
           // Reload the page to get the updated list
-          location.reload();
+        //  location.reload();
         });
     });
   });
@@ -64,7 +65,7 @@ $(document).ready(function () {
         function () {
           console.log("created new stock");
           // Reload the page to get the updated list
-          location.reload();
+         // location.reload();
         });
     });
   });
@@ -87,7 +88,7 @@ $(document).ready(function () {
         function () {
           console.log("created new stock");
           // Reload the page to get the updated list
-          location.reload();
+        //  location.reload();
         });
     });
   });
