@@ -86,7 +86,8 @@ module.exports = function (app) {
           email: req.body.email
          }
       }).then(function (stock) {
-        res.json(stock);
+        // res.json(stock);
+        res.redirect("/members")
       });
   });
 };
