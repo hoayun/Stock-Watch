@@ -50,9 +50,8 @@ module.exports = function (app) {
         favstock1: req.user.favstock1,
         favstock2: req.user.favstock2,
         favstock3: req.user.favstock3,
-        favstock4: req.user.favstock4,
-        favstock5: req.user.favstock5,
-        favstock6: req.user.favstock6
+        favstock4: req.user.favstock4
+       
       });
     }
   });
@@ -87,6 +86,45 @@ module.exports = function (app) {
          }
       }).then(function (stock) {
         res.json(stock);
+      });
+  });
+  app.put("/api/stock2", function(req, res) {
+    console.log(req.body);
+    db.User.update({
+      favstock2: req.body.favstock2
+    }, {
+        where: {
+          email: req.body.email
+         }
+      }).then(function (stock) {
+        res.json(stock);
+      
+      });
+  });
+  app.put("/api/stock3", function(req, res) {
+    console.log(req.body);
+    db.User.update({
+      favstock3: req.body.favstock3
+    }, {
+        where: {
+          email: req.body.email
+         }
+      }).then(function (stock) {
+        res.json(stock);
+      
+      });
+  });
+  app.put("/api/stock4", function(req, res) {
+    console.log(req.body);
+    db.User.update({
+      favstock4: req.body.favstock4
+    }, {
+        where: {
+          email: req.body.email
+         }
+      }).then(function (stock) {
+        res.json(stock);
+      
       });
   });
 };

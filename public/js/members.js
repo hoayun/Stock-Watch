@@ -22,7 +22,76 @@ $(document).ready(function () {
           // location.reload();
         });
     });
+  }); 
+  $("#input2").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+    $.get("/api/user_data").then(function(data) {
+
+      var newStock = {
+        favstock1: $("#myInput2").val(),
+        email: data.email
+      };
+
+      // Send the POST request.
+      $.ajax("/api/stock2", {
+        type: "PUT",
+        data: newStock
+      }).then(
+        function () {
+          console.log("created new stock");
+          // Reload the page to get the updated list
+          location.reload();
+        });
+    });
   });
+   
+  $("#input3").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+    $.get("/api/user_data").then(function(data) {
+
+      var newStock = {
+        favstock1: $("#myInput3").val(),
+        email: data.email
+      };
+
+      // Send the POST request.
+      $.ajax("/api/stock3", {
+        type: "PUT",
+        data: newStock
+      }).then(
+        function () {
+          console.log("created new stock");
+          // Reload the page to get the updated list
+          location.reload();
+        });
+    });
+  });
+   
+  $("#input4").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+    $.get("/api/user_data").then(function(data) {
+
+      var newStock = {
+        favstock1: $("#myInput4").val(),
+        email: data.email
+      };
+
+      // Send the POST request.
+      $.ajax("/api/stock4", {
+        type: "PUT",
+        data: newStock
+      }).then(
+        function () {
+          console.log("created new stock");
+          // Reload the page to get the updated list
+          location.reload();
+        });
+    });
+  });
+
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
   $.get("/api/user_data").then(function (data) {
@@ -42,7 +111,7 @@ $(document).ready(function () {
       
 
   // Making a card for articles
-  var wInfo = $("<div>").addClass("card-content");
+  var wInfo = $("<div>").addClass("card-content acard");
   var articleDiv = $("<div class='col'>")
   var wcardDiv = $("<div>").addClass("card artcard");
   var artPic = $("<img>").attr("src", data.articles[i].urlToImage).addClass("artPic");
