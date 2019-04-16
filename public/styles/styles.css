@@ -189,4 +189,13 @@ h4{
 .container-mem {
 	background: lightgray;
 	border-radius: 25px;
+
 }
+.artcard{
+	width:260px;
+}
+.artPic{
+	width:210px;
+	height:120px;
+}
+

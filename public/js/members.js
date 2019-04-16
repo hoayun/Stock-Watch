@@ -1,4 +1,6 @@
+// require('dotenv').config()
 $(document).ready(function() {
+  
   $("#input1").on("click", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -32,6 +34,21 @@ $(document).ready(function() {
         url: query1,
         method: "GET",
       }).then(function (data) {
+        var companyName = $("<p>").text(data.articles[0].title).addClass("card-title");
+      
+
+  // Making a card for articles
+  var wInfo = $("<div>").addClass("card-content");
+  var articleDiv = $("<div class='col'>")
+  var wcardDiv = $("<div>").addClass("card artcard");
+  var artPic = $("<img>").attr("src", data.articles[0].urlToImage).addClass("artPic");
+  // Putting article data on the card
+      articleDiv.append(wcardDiv);
+      wInfo.append(companyName);
+      wInfo.append(artPic);
+     wcardDiv.append(wInfo);
+     
+          $("#articles").append(articleDiv);
         console.log(data);
       })
     $.get("/api/user_data").then(function (data) {
