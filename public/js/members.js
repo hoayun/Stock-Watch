@@ -29,34 +29,43 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
   function ready() {
+    
     var query1 = "https://newsapi.org/v2/everything?q=stocks&from=2019-04-15&sortBy=popularity&apiKey=9d5561e285274379bd8c36f1241a89c7"
-    $.ajax({
-      url: query1,
-      method: "GET",
-    }).then(function (data) {
-      var companyName = $("<p>").text(data.articles[0].title).addClass("card-title");
 
+      $.ajax({
+        url: query1,
+        method: "GET",
+      }).then(function (data) {
+        console.log(data);
+        for (i = 0; i < 2; i++){
+        var artTitle = $("<p>").html(data.articles[i].title.link(data.articles[i].url)).addClass("card-title");
+      
 
-      // Making a card for articles
-      var wInfo = $("<div>").addClass("card-content");
-      var articleDiv = $("<div class='col'>")
-      var wcardDiv = $("<div>").addClass("card artcard");
-      var artPic = $("<img>").attr("src", data.articles[0].urlToImage).addClass("artPic");
-      // Putting article data on the card
+  // Making a card for articles
+  var wInfo = $("<div>").addClass("card-content");
+  var articleDiv = $("<div class='col'>")
+  var wcardDiv = $("<div>").addClass("card artcard");
+  var artPic = $("<img>").attr("src", data.articles[i].urlToImage).addClass("artPic");
+  // Putting article data on the card
+
       articleDiv.append(wcardDiv);
-      wInfo.append(companyName);
+      wInfo.append(artTitle);
       wInfo.append(artPic);
-      wcardDiv.append(wInfo);
 
-      $("#articles").append(articleDiv);
-      console.log(data);
-    })
+     wcardDiv.append(wInfo);
+     
+          $("#articles").append(articleDiv);
+        console.log(data);
+        }
+      })
+ 
     $.get("/api/user_data").then(function (data) {
       var sym = [];
       sym.push(data.favstock1, data.favstock2, data.favstock3, data.favstock4, data.favstock5, data.favstock6);
       if (data.favstock1 === null) {
         console.log("there is no favstock");
       }
+
       else {
         $(".cardstart").empty();
 
@@ -154,6 +163,7 @@ $(document).ready(function () {
         }
       }
     })
+
   }
   ready();
 });
