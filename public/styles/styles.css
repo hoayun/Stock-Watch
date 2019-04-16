@@ -87,7 +87,9 @@ footer.page-footer {
 	/* margin-bottom: 40px */
 }
 
-
+footer{
+	margin-top: 40px
+}
 /* Member page */
 
 .container-mem {
@@ -161,7 +163,7 @@ input[type=submit] {
 .card {
 	height:300px;
 	
-width:400px;
+width:380px;
 }
 form {
 	margin-left: 20px;

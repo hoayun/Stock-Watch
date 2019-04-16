@@ -87,7 +87,6 @@ module.exports = function (app) {
          }
       }).then(function (stock) {
         res.json(stock);
-      
       });
   });
 };
