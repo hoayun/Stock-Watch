@@ -7,10 +7,10 @@ $(document).ready(function () {
     $.get("/api/user_data").then(function (data) {
 
       var newStock = {
-        favstock1: $("#myInput").val(),
+        favstock1: $("#myInput1").val(),
         email: data.email
       };
-
+      console.log(newStock);
       // Send the POST request.
       $.ajax("/api/stock1", {
         type: "PUT",
@@ -19,7 +19,7 @@ $(document).ready(function () {
         function () {
           console.log("created new stock");
           // Reload the page to get the updated list
-          location.reload();
+          // location.reload();
         });
     });
   });
@@ -80,7 +80,7 @@ $(document).ready(function () {
             method: "GET",
           }).then(function (data) {
 
-            // Weather data                
+            // Stock data
 
             var companyName = $("<span>").text(data.companyName).addClass("card-title");
             var symbol = $("<p>").text(data.symbol);
@@ -96,7 +96,7 @@ $(document).ready(function () {
             var auto = $("<form autocomplete='off' action=''>")
             var autoline2 = $("<div style='width:800px'>").addClass("autocomplete")
             var inputauto = $("<input id='myInput1' type='text' name='sym' placeholder='Symbol Name'>").addClass("input1")
-            var submit = $("<input id='input1' type='submit'>")
+            var submit = $("<input id='input1' type='submit'>");
 
             weatherdiv.append(wcardDiv);
             wInfo.append(companyName);
@@ -111,12 +111,11 @@ $(document).ready(function () {
             autoline2.append(inputauto);
             auto.append(submit);
 
-
             $(".cardstart").append(weatherdiv);
             console.log(data);
             console.log(data.symbol);
             console.log(data.high);
-            console.log(data.low)
+            console.log(data.low);
             console.log(data.companyName);
 
             // We need to grab this data using jquery and display to the user on their page************************* TO DO *below is a list of possible data

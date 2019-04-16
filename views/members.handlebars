@@ -27,6 +27,7 @@
         <h4>Your Stocks</h4>
       <div class="row">
         <div class="cardstart">
+          <div class="col">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">Search for a Stock</span>
@@ -40,14 +41,74 @@
             <div class="autocomplete" style="width:800px;">
               <input id="myInput1" class="input1" type="text" name="sym" placeholder="Stock Symbol">
             </div>
+            
             <input id="input1" type="submit">
           </form>
+          </div>
+{{!-- CARD TWO --}}
+          <div class="col">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Search for a Stock</span>
+              <p>Use the seach bar below and this card will fill with the information for that selected stock</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Go to Stock Page</a>
+            </div>
+          </div>
+          <form autocomplete="off" action="">
+            <div class="autocomplete" style="width:800px;">
+              <input id="myInput2" class="input2" type="text" name="sym" placeholder="Stock Symbol">
+            </div>
+            <input id="input2" type="submit">
+          </form>
+</div>
+          {{!-- CARD THREE --}}
+                    <div class="col">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Search for a Stock</span>
+              <p>Use the seach bar below and this card will fill with the information for that selected stock</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Go to Stock Page</a>
+            </div>
+          </div>
+          <form autocomplete="off" action="">
+            <div class="autocomplete" style="width:800px;">
+              <input id="myInput3" class="input3" type="text" name="sym" placeholder="Stock Symbol">
+            </div>
+            <input id="input3" type="submit">
+          </form>
+          </div>
+
+          <div class="col">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Search for a Stock</span>
+              <p>Use the seach bar below and this card will fill with the information for that selected stock</p>
+            </div>
+            <div class="card-action">
+              <a href="#">Go to Stock Page</a>
+            </div>
+          </div>
+          <form autocomplete="off" action="">
+            <div class="autocomplete" style="width:800px;">
+              <input id="myInput4" class="input4" type="text" name="sym" placeholder="Stock Symbol">
+            </div>
+            <input id="input4" type="submit">
+          </form>
+          </div>
         </div>
 
 
     </div>
   </div>
 </div>
+</div>
+<br>
+<br>
+      
       <footer class="page-footer grey">
   <div class="container">
     <div class="row">
@@ -3607,5 +3668,8 @@
     'ZNGA',
     ]
   autocomplete(document.getElementById("myInput1"), sym);
+  autocomplete(document.getElementById("myInput2"), sym);
+  autocomplete(document.getElementById("myInput3"), sym);
+  autocomplete(document.getElementById("myInput4"), sym);
  
 </script>
