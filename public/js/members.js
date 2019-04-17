@@ -1,6 +1,8 @@
- 
+require('dotenv').config()
+// var keys = require("../../config/keys");
 
 $(document).ready(function () {
+  // console.log(keys)
 
   $("#input1").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
