@@ -18,8 +18,6 @@ A community based stock application that will allow users to follow, track, and 
 * Data used with Dbeaver
 * Postman 
 
-# TEST
-* Localhost:
 
 
 # How to use
@@ -43,7 +41,5 @@ A community based stock application that will allow users to follow, track, and 
 * Madison Fang: https://www.linkedin.com/in/madison-fang-5a2908177/ 
 
 
-# License 
-* 
 
 
